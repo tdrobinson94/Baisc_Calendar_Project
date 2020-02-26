@@ -286,7 +286,6 @@ $('.num-box').click(function() {
     if ($(this).hasClass('dead_month_color')) {
         $('.dead_month_color').click(false);
     } else {
-        console.log($(this).children('.weekday').children().html());
         $(this).addClass('clicked-day');
 
         $(document).find('#todays-day').val($(this).children('.weekday').children().html());
@@ -296,7 +295,7 @@ $('.num-box').click(function() {
 
     if ($(this).hasClass('clicked-day')) {
         $('.clicked-day').dblclick(function() {
-            console.log('opening popup');
+            console.log('opening day');
             $('.clicked-day').addClass('double-click');
         })
     }
@@ -304,7 +303,6 @@ $('.num-box').click(function() {
 })
 
 $('.close-day').click(function(){
-    console.log('closing');
+    console.log('closing day');
     $('.clicked-day').removeClass('double-click');
-    window.setTimeout($('body, html').animate({ scrollTop: $('.clicked-day').offset().top - 150 }, 500), 200);
 })
