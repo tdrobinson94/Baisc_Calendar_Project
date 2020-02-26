@@ -306,3 +306,12 @@ $('.close-day').click(function(){
     console.log('closing day');
     $('.clicked-day').removeClass('double-click');
 })
+
+
+$('.add-item-button').click(function() {
+    $('.add-item-form').addClass('show-form');
+})
+
+$('.close-form').click(function () {
+    $('.add-item-form').removeClass('show-form');
+})

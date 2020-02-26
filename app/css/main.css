@@ -194,7 +194,7 @@ html {
             top: 260px;
             position: fixed;
             bottom: 200px;
-            box-shadow: 1px 1px 10px grey;
+            box-shadow: 1px 1px 10px #333333;
             transition: all .3s ease-in-out;
             animation-name: grow;
             animation-duration: .5s;
@@ -202,9 +202,9 @@ html {
             @media screen and (max-width: 800px) {
               .calendar_wrapper .calendar-container .days .num-box.clicked-day.double-click {
                 top: 87px;
-                height: 78%;
-                box-shadow: none;
-                bottom: initial; } }
+                height: auto;
+                bottom: 93.64px;
+                box-shadow: none; } }
             .calendar_wrapper .calendar-container .days .num-box.clicked-day.double-click .close-day {
               display: block;
               position: absolute;
@@ -223,6 +223,55 @@ html {
     transform: scale(0.5, 0.5); } }
     .calendar_wrapper .calendar-container .cur_trans_box {
       display: none; }
+  .calendar_wrapper .add-item-form {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+    animation-name: shrink;
+    animation-duration: .5s;
+    animation-timing-function: ease-in-out; }
+    .calendar_wrapper .add-item-form.show-form {
+      position: sticky;
+      margin: auto;
+      bottom: 195px;
+      right: 71px;
+      height: 400px;
+      width: 100%;
+      max-width: 800px;
+      border-radius: 0;
+      overflow: initial;
+      transition: all .3s ease-in-out;
+      background-color: #fff;
+      border: 1px solid #333333;
+      z-index: 999;
+      display: block;
+      box-shadow: 1px 1px 10px #333333;
+      animation-name: grow;
+      animation-duration: .5s;
+      animation-timing-function: ease-in-out; }
+    .calendar_wrapper .add-item-form .close-form {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 27px;
+      padding: 0px 20px;
+      cursor: pointer;
+      color: #c00; }
+
+@keyframes grow {
+  50% {
+    transform: scale(1, 1); } }
+
+@keyframes shrink {
+  25% {
+    transform: scale(0.5, 0.5); } }
   .calendar_wrapper .add-item-button {
     padding: 15px;
     position: fixed;

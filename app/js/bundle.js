@@ -28042,6 +28042,12 @@ $('.close-day').click(function () {
   console.log('closing day');
   $('.clicked-day').removeClass('double-click');
 });
+$('.add-item-button').click(function () {
+  $('.add-item-form').addClass('show-form');
+});
+$('.close-form').click(function () {
+  $('.add-item-form').removeClass('show-form');
+});
 
 },{"./utilities/months.constant.js":4,"jquery":1,"lodash":2}],4:[function(require,module,exports){
 const MONTHS = [{
