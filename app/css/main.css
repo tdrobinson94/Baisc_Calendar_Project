@@ -1,7 +1,11 @@
-@import url(https://weloveiconfonts.com/api/?family=fontawesome|entypo);
+@import url(https://weloveiconfonts.com/api/?family=entypo|fontawesome);
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif; }
+
 /* fontawesome */
 [class*="fontawesome-"]:before {
-  font-family: 'entypo', 'FontAwesome', sans-serif; }
+  font-family: 'FontAwesome', sans-serif; }
 
 /* =================================================================
 variables
@@ -23,7 +27,8 @@ html {
 
 .calendar_wrapper {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  position: relative; }
   .calendar_wrapper .month {
     width: 100%;
     top: 0px;
@@ -181,7 +186,7 @@ html {
             font-weight: bolder;
             font-size: 20px; }
           .calendar_wrapper .calendar-container .days .num-box.clicked-day.double-click {
-            max-width: 700px;
+            max-width: 800px;
             margin: auto;
             z-index: 999;
             width: 100%;
@@ -197,7 +202,7 @@ html {
             @media screen and (max-width: 800px) {
               .calendar_wrapper .calendar-container .days .num-box.clicked-day.double-click {
                 top: 87px;
-                height: 100%;
+                height: 78%;
                 box-shadow: none;
                 bottom: initial; } }
             .calendar_wrapper .calendar-container .days .num-box.clicked-day.double-click .close-day {
@@ -218,3 +223,13 @@ html {
     transform: scale(0.5, 0.5); } }
     .calendar_wrapper .calendar-container .cur_trans_box {
       display: none; }
+  .calendar_wrapper .add-item-button {
+    padding: 15px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+    border-radius: 100%;
+    border: none;
+    background-color: red;
+    color: #fff; }
