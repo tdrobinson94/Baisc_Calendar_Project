@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive Calendar</title>
+
+        <!-- Core CSS file -->
+        <link rel="stylesheet" href="css/main.css">
+
+        
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <section id="calendarWrapper" class="calendar_wrapper">
+                <div class="month">
+                    <form class="select-form">
+                        <div class="date-selectors">
+                            <select name="select" class="month-selector selector" id="month"></select>
+                            <span class="todays-day"></span>
+                            <input class="todays-day" type="number" id="todays-day" maxlength="2" readonly/>
+                            <select name="select" class="year-selector selector" id="year"></select>
+                        </div>
+                    </form>
+
+                    <div class="calendar-controls">
+                        <button class="prev button">Prev</button>
+                        <button class="current button"> Today</button>
+                        <button class="next button">Next</button>
+                    </div>
+
+                    <div class="weekday-initials">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+
+                </div>
+
+                <div class="calendar-container">
+                    <div class="days">
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                    </div>
+                
+                    <div class="days">
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                    </div>
+                
+                    <div class="days">
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                    </div>
+                
+                    <div class="days">
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                    </div>
+                
+                    <div class="days">
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                    </div>
+
+                    <div class="days">
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                        <div id="num-box" class="num-box dead_month_color"></div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <script src="js/bundle.js"></script>
+    </body>
+
+</html>
