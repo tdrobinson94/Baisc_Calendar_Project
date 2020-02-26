@@ -248,7 +248,8 @@ html {
       box-shadow: 1px 1px 10px #333333; }
       @media screen and (max-width: 800px) {
         .calendar_wrapper .add-item-form.show-form {
-          width: 90%; } }
+          width: 90%;
+          right: 0; } }
     .calendar_wrapper .add-item-form .close-form {
       display: block;
       position: absolute;

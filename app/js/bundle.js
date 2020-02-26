@@ -28041,7 +28041,8 @@ $('.num-box').click(function () {
 $('.close-day').click(function () {
   console.log('closing day');
   $('.clicked-day').removeClass('double-click');
-});
+}); //Open form to add items to the calendar
+
 $('.add-item-button').click(function () {
   $('.add-item-form').addClass('show-form');
   $('.clicked-day').removeClass('double-click');
