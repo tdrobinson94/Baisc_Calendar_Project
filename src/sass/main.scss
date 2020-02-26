@@ -316,19 +316,15 @@ html {
   }
 
   .add-item-form {
-    position: fixed;
+    position: sticky;
     bottom: 30px;
-    right: 30px;
+    float: right;
     font-size: 20px;
-    width: 30px;
-    height: 30px;
+    width: 0px;
+    height: 0px;
     overflow: hidden;
-    visibility: hidden;
     transition: all .3s ease-in-out;
-
-    @media screen and (min-width: $max-width) {
-      margin-right: 60px;
-    }
+    margin-right: -50px;
 
     &.show-form {
       position: sticky;
@@ -342,8 +338,8 @@ html {
       background-color: $textwht;
       border: 1px solid $textdrk;
       z-index: 999;
-      visibility: visible;
       box-shadow: 1px 1px 10px $textdrk;
+      float: none;
 
       @media screen and (max-width: $end-small) {
         width: 90%;

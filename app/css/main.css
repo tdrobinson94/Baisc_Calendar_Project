@@ -226,18 +226,15 @@ html {
     .calendar_wrapper .calendar-container .cur_trans_box {
       display: none; }
   .calendar_wrapper .add-item-form {
-    position: fixed;
+    position: sticky;
     bottom: 30px;
-    right: 30px;
+    float: right;
     font-size: 20px;
-    width: 30px;
-    height: 30px;
+    width: 0px;
+    height: 0px;
     overflow: hidden;
-    visibility: hidden;
-    transition: all .3s ease-in-out; }
-    @media screen and (min-width: 1400px) {
-      .calendar_wrapper .add-item-form {
-        margin-right: 60px; } }
+    transition: all .3s ease-in-out;
+    margin-right: -50px; }
     .calendar_wrapper .add-item-form.show-form {
       position: sticky;
       margin: auto;
@@ -250,8 +247,8 @@ html {
       background-color: #fff;
       border: 1px solid #333333;
       z-index: 999;
-      visibility: visible;
-      box-shadow: 1px 1px 10px #333333; }
+      box-shadow: 1px 1px 10px #333333;
+      float: none; }
       @media screen and (max-width: 800px) {
         .calendar_wrapper .add-item-form.show-form {
           width: 90%;
