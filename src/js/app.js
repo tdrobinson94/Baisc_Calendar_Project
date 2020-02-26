@@ -282,6 +282,7 @@ $('.next').click(function(){
 // Click day functionality
 $('.num-box').click(function() {
     $('.num-box').removeClass('clicked-day');
+    $('.add-item-form').removeClass('show-form');
 
     if ($(this).hasClass('dead_month_color')) {
         $('.dead_month_color').click(false);
