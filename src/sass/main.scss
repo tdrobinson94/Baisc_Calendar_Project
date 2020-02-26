@@ -315,27 +315,21 @@ html {
 
   .add-item-form {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 30px;
+    right: 30px;
     font-size: 20px;
-    border-radius: 100%;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     overflow: hidden;
     transition: all .3s ease-in-out;
-    animation-name: shrink;
-    animation-duration: .5s;
-    animation-timing-function: ease-in-out;
 
     &.show-form {
       position: sticky;
       margin: auto;
       bottom: 195px;
-      right: 71px;
       height: 400px;
       width: 100%;
       max-width: $end-small;
-      border-radius: 0;
       overflow: initial;
       transition: all .3s ease-in-out;
       background-color: $textwht;
@@ -343,12 +337,8 @@ html {
       z-index: 999;
       display: block;
       box-shadow: 1px 1px 10px $textdrk;
-      animation-name: grow;
-      animation-duration: .5s;
-      animation-timing-function: ease-in-out;
 
       @media screen and (max-width: $end-small) {
-        right: 0;
         width: 90%;
       }
     }
@@ -363,14 +353,7 @@ html {
         cursor: pointer;
         color: $alert;
       }
-  }
-
-  @keyframes grow{
-    50%  {transform: scale(1, 1);}
-  }
-  @keyframes shrink{
-    25%  {transform: scale(.5, .5);}
-  }
+    }
 
   .add-item-button {
     padding: 15px;
