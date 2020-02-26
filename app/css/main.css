@@ -255,6 +255,10 @@ html {
       animation-name: grow;
       animation-duration: .5s;
       animation-timing-function: ease-in-out; }
+      @media screen and (max-width: 800px) {
+        .calendar_wrapper .add-item-form.show-form {
+          right: 0;
+          width: 90%; } }
     .calendar_wrapper .add-item-form .close-form {
       display: block;
       position: absolute;

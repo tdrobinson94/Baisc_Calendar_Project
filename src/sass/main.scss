@@ -348,7 +348,8 @@ html {
       animation-timing-function: ease-in-out;
 
       @media screen and (max-width: $end-small) {
-
+        right: 0;
+        width: 90%;
       }
     }
 
