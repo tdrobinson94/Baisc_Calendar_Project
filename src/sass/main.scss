@@ -267,36 +267,38 @@ html {
             }
           }
 
-          &.double-click {
-            max-width: $end-small;
-            margin: auto;
-            z-index: 999;
-            width: 100%;
-            height: 400px;
-            top: 260px;
-            position: fixed;
-            bottom: 200px;
-            box-shadow: 1px 1px 10px $textdrk;
-            transition: all .3s ease-in-out;
-            animation-name: grow;
-            animation-duration: .5s;
-            animation-timing-function: ease-in-out;
+          @media screen and (min-width: $end-small) {
+            &.double-click {
+              max-width: $end-small;
+              margin: auto;
+              z-index: 999;
+              width: 100%;
+              height: 400px;
+              top: 260px;
+              position: fixed;
+              bottom: 200px;
+              box-shadow: 1px 1px 10px $textdrk;
+              transition: all .3s ease-in-out;
+              animation-name: grow;
+              animation-duration: .5s;
+              animation-timing-function: ease-in-out;
 
-            @media screen and (max-width: $end-small) {
-              top: 87px;
-              height: auto;
-              bottom: 93.64px;
-              box-shadow: none;
-            }
+              @media screen and (max-width: $end-small) {
+                top: 87px;
+                height: auto;
+                bottom: 93.64px;
+                box-shadow: none;
+              }
 
-            .close-day {
-              display: block;
-              position: absolute;
-              right: 0;
-              font-size: 27px;
-              padding: 0px 20px;
-              cursor: pointer;
-              color: $alert;
+              .close-day {
+                display: block;
+                position: absolute;
+                right: 0;
+                font-size: 27px;
+                padding: 0px 20px;
+                cursor: pointer;
+                color: $alert;
+              }
             }
           }
           @keyframes grow{
@@ -321,7 +323,12 @@ html {
     width: 30px;
     height: 30px;
     overflow: hidden;
+    visibility: hidden;
     transition: all .3s ease-in-out;
+
+    @media screen and (min-width: $max-width) {
+      margin-right: 60px;
+    }
 
     &.show-form {
       position: sticky;
@@ -335,7 +342,7 @@ html {
       background-color: $textwht;
       border: 1px solid $textdrk;
       z-index: 999;
-      display: block;
+      visibility: visible;
       box-shadow: 1px 1px 10px $textdrk;
 
       @media screen and (max-width: $end-small) {
@@ -358,9 +365,10 @@ html {
 
   .add-item-button {
     padding: 15px;
-    position: fixed;
+    position: sticky;
     bottom: 20px;
-    right: 20px;
+    float: right;
+    margin-right: 20px;
     font-size: 20px;
     border-radius: 100%;
     border: none;

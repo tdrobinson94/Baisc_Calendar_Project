@@ -293,11 +293,13 @@ $('.num-box').click(function() {
         $('body, html').animate({ scrollTop: $(this).offset().top - 150 }, 500);
     }
 
-    if ($(this).hasClass('clicked-day')) {
+    if ($(this).hasClass('clicked-day') && $(window).width() >= 800) {
         $('.clicked-day').dblclick(function() {
             console.log('opening day');
             $('.clicked-day').addClass('double-click');
         })
+    } else {
+        
     }
 
 })

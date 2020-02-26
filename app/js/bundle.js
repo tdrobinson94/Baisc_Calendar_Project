@@ -28031,12 +28031,12 @@ $('.num-box').click(function () {
     }, 500);
   }
 
-  if ($(this).hasClass('clicked-day')) {
+  if ($(this).hasClass('clicked-day') && $(window).width() >= 800) {
     $('.clicked-day').dblclick(function () {
       console.log('opening day');
       $('.clicked-day').addClass('double-click');
     });
-  }
+  } else {}
 });
 $('.close-day').click(function () {
   console.log('closing day');
