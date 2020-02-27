@@ -217,7 +217,7 @@ html {
                 font-size: 27px;
                 padding: 0px 20px;
                 cursor: pointer;
-                color: #c00; } }
+                color: red; } }
 
 @keyframes grow {
   50% {
@@ -231,7 +231,7 @@ html {
   .calendar_wrapper .add-item-form {
     position: fixed;
     bottom: 30px;
-    right: 5%;
+    right: 30px;
     font-size: 20px;
     width: 0%;
     height: 0px;
@@ -267,12 +267,15 @@ html {
       border-radius: 0; }
       @media screen and (max-width: 800px) {
         .calendar_wrapper .add-item-form.show-form {
-          width: 90%; } }
+          width: 90%;
+          bottom: 50%;
+          transform: translateY(50%); } }
     .calendar_wrapper .add-item-form .form-nav {
       position: relative;
       padding: 20px 0 0 20px; }
       .calendar_wrapper .add-item-form .form-nav h2 {
-        margin: 0; }
+        margin: 0;
+        margin-right: 54px; }
     .calendar_wrapper .add-item-form form {
       padding: 20px;
       margin: auto; }
@@ -298,7 +301,7 @@ html {
           transition: all .3s ease-in-out; }
         .calendar_wrapper .add-item-form form .select-item .selected, .calendar_wrapper .add-item-form form .checkbox .selected {
           background-color: rgba(255, 0, 0, 0.2);
-          color: #c00;
+          color: red;
           border-radius: 10px;
           transition: color .5s ease-in-out; }
       .calendar_wrapper .add-item-form form select, .calendar_wrapper .add-item-form form input.date-input {
@@ -325,7 +328,7 @@ html {
         .calendar_wrapper .add-item-form form ul li {
           margin: 5px; }
       .calendar_wrapper .add-item-form form button.submit-form {
-        background-color: #c00;
+        background-color: red;
         color: #fff;
         border-radius: 10px;
         padding: 10px;
@@ -341,7 +344,7 @@ html {
       font-size: 27px;
       padding: 0px 20px;
       cursor: pointer;
-      color: #c00; }
+      color: red; }
   .calendar_wrapper .add-item-button {
     padding: 15px;
     position: fixed;

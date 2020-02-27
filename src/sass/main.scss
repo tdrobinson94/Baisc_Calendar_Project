@@ -24,7 +24,7 @@ $primary: red;// #00B0FF;
 $accent: lightgray;
 $textwht: #fff;
 $textdrk: #333333;
-$alert: #c00;
+$alert: red;
 
 
 html {
@@ -323,7 +323,7 @@ html {
   .add-item-form {
     position: fixed;
     bottom: 30px;
-    right: 5%;
+    right: 30px;
     font-size: 20px;
     width: 0%;
     height: 0px;
@@ -362,6 +362,8 @@ html {
 
       @media screen and (max-width: $end-small) {
         width: 90%;
+        bottom: 50%;
+        transform: translateY(50%);
       }
 
     }
@@ -371,6 +373,7 @@ html {
       padding: 20px 0 0 20px;
       h2 {
         margin: 0;
+        margin-right: 54px;
       }
     }
 
@@ -475,7 +478,7 @@ html {
     font-size: 20px;
     border-radius: 100%;
     border: none;
-    background-color: red;
+    background-color: $alert;
     color: #fff;
     right: 20px;
     z-index: 999;

@@ -27782,6 +27782,7 @@ $(document).find('#year').html(`
 
 $('.month-selector, .year-selector').on('change', function (event) {
   event.preventDefault();
+  $('.add-item-form').removeClass('show-form');
   $('.num-box').removeClass('clicked-day');
   $('.num-date').removeClass('first-day');
   $('.num-box').removeClass('selected-day'); //=================== Render Current month days as well as next month days ==================//
@@ -27948,6 +27949,7 @@ $('.month-selector').change(); //============= Scroll Months functionality =====
 //===== Go to previous month =======//
 
 $('.prev').click(function () {
+  $('.add-item-form').removeClass('show-form');
   $('.num-box').removeClass('selected-day');
   $('.clicked-day').removeClass('double-click');
   $('.num-date').removeClass('first-day');
@@ -27978,6 +27980,7 @@ $('.prev').click(function () {
 }); //===== Go to today's date =======//
 
 $('.current').click(function () {
+  $('.add-item-form').removeClass('show-form');
   $('.num-box').removeClass('selected-day');
   $('.clicked-day').removeClass('double-click');
   $('.num-date').removeClass('first-day');
@@ -27990,6 +27993,7 @@ $('.current').click(function () {
 }); //===== Go to next month =======//
 
 $('.next').click(function () {
+  $('.add-item-form').removeClass('show-form');
   $('.num-box').removeClass('selected-day');
   $('.clicked-day').removeClass('double-click');
   $('.num-date').removeClass('first-day');
@@ -28046,6 +28050,8 @@ $('.close-day').click(function () {
 }); //Open form to add items to the calendar
 
 $('.add-item-button').click(function () {
+  $('.select-item label').removeClass('selected');
+  $('.checkbox label').removeClass('selected');
   let month = clock.getMonth() + 1;
   if (month < 10) month = "0" + month;
   if (day < 10) day = "0" + day;
@@ -28053,6 +28059,8 @@ $('.add-item-button').click(function () {
   $('.date-input').val(today);
   $('.add-item-form').addClass('show-form');
   $('.clicked-day').removeClass('double-click');
+  $('.select-item label.item_1').addClass('selected');
+  $('.checkbox label.frequency_1').addClass('selected');
 });
 $('.close-form').click(function () {
   $('.add-item-form').removeClass('show-form');
@@ -28060,6 +28068,9 @@ $('.close-form').click(function () {
 
 $('.frequency').on('change', function () {
   $('.frequency').not(this).prop('checked', false);
+});
+$('.checkbox').on('change', function () {
+  $('.checkbox').not(this).prop('checked', false);
 }); //Select type in form
 
 $('.select-item label').click(function () {
