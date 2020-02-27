@@ -405,6 +405,7 @@ html {
           width: auto;
           padding: 10px;
           transition: all .3s ease-in-out;
+          font-size: 15px;
         }
 
         .selected {
@@ -415,7 +416,7 @@ html {
         }
       }
 
-        select, input.date-input {
+        select, .date-input, .item-title, .event-description, .amount-input, .location-input, .time-input {
         width: 100%;
         padding: 10px;
         border: 1px solid #c4c7cc;
@@ -424,6 +425,15 @@ html {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
+        font-size: 15px;
+      }
+
+      .event-description, .description-label, .amount-input, .amount-label, .location-label, .location-input, .time-input, .time-label {
+        display: none;
+      }
+
+      .show-input {
+        display: block;
       }
 
       ul {
@@ -452,7 +462,7 @@ html {
         border-radius: 10px;
         padding: 10px;
         border: 0;
-        font-size: 20px;
+        font-size: 15px;
         float: right;
         margin: 20px 0;
       }

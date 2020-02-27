@@ -112,6 +112,8 @@
                         <div class="close-form entypo-cancel"></div>
                     </div>
                     <form>
+                        <label>Title</label>
+                        <input type="text" class="item-title" placeholder="Title or name">
                         <label>Select Type</label>
                         <div class="select-item">
                             <input class="checkbox" type="checkbox" id="checkbox1" checked/>
@@ -132,8 +134,11 @@
 
                         <label>Select Date</label>
                         <input class="date-input" type="date" />
-                        <label>Select Frequency</label>
 
+                        <label class="time-label">Select Time</label>
+                        <input class="time-input" type="time" />
+
+                        <label>Select Frequency</label>
                         <div class="checkbox">
                             <input class="frequency first-checkbox" type="checkbox" id="frequency1" value="Once" checked/>
                             <label for="frequency1" class="frequency_1">Once</label>
@@ -156,6 +161,15 @@
                             <input class="frequency" type="checkbox" value="Annual" id="frequency7" />
                             <label for="frequency7" class="frequency_7">Annual</label>
                         </div>
+
+                        <label class="description-label">Description</label>
+                        <input type="text" class="event-description" placeholder="Add description">
+
+                        <label class="location-label">Location</label>
+                        <input type="text" class="location-input" placeholder="Location">
+
+                        <label class="amount-label">Amount</label>
+                        <input type="text" class="amount-input" placeholder="Amount">
                         <button class="submit-form" type="submit">Enter</button>
                     </form>
                 </div>

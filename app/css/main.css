@@ -298,13 +298,14 @@ html {
           display: inline;
           width: auto;
           padding: 10px;
-          transition: all .3s ease-in-out; }
+          transition: all .3s ease-in-out;
+          font-size: 15px; }
         .calendar_wrapper .add-item-form form .select-item .selected, .calendar_wrapper .add-item-form form .checkbox .selected {
           background-color: rgba(255, 0, 0, 0.2);
           color: red;
           border-radius: 10px;
           transition: color .5s ease-in-out; }
-      .calendar_wrapper .add-item-form form select, .calendar_wrapper .add-item-form form input.date-input {
+      .calendar_wrapper .add-item-form form select, .calendar_wrapper .add-item-form form .date-input, .calendar_wrapper .add-item-form form .item-title, .calendar_wrapper .add-item-form form .event-description, .calendar_wrapper .add-item-form form .amount-input, .calendar_wrapper .add-item-form form .location-input, .calendar_wrapper .add-item-form form .time-input {
         width: 100%;
         padding: 10px;
         border: 1px solid #c4c7cc;
@@ -312,7 +313,12 @@ html {
         margin: 10px 0;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        font-size: 15px; }
+      .calendar_wrapper .add-item-form form .event-description, .calendar_wrapper .add-item-form form .description-label, .calendar_wrapper .add-item-form form .amount-input, .calendar_wrapper .add-item-form form .amount-label, .calendar_wrapper .add-item-form form .location-label, .calendar_wrapper .add-item-form form .location-input, .calendar_wrapper .add-item-form form .time-input, .calendar_wrapper .add-item-form form .time-label {
+        display: none; }
+      .calendar_wrapper .add-item-form form .show-input {
+        display: block; }
       .calendar_wrapper .add-item-form form ul {
         list-style: none;
         display: flex;
@@ -333,7 +339,7 @@ html {
         border-radius: 10px;
         padding: 10px;
         border: 0;
-        font-size: 20px;
+        font-size: 15px;
         float: right;
         margin: 20px 0; }
     .calendar_wrapper .add-item-form .close-form {

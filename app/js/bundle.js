@@ -28058,6 +28058,7 @@ $('.add-item-button').click(function () {
   var today = clock.getFullYear() + '-' + month + '-' + day;
   $('.date-input').val(today);
   $('.add-item-form').addClass('show-form');
+  $('.event-description, .description-label, .location-input, .location-label, .time-input, .time-label').addClass('show-input');
   $('.clicked-day').removeClass('double-click');
   $('.select-item label.item_1').addClass('selected');
   $('.checkbox label.frequency_1').addClass('selected');
@@ -28078,30 +28079,52 @@ $('.select-item label').click(function () {
 
   switch ($(this).hasClass('item_1')) {
     case $(this).hasClass('item_1'):
-      console.log("Item 1");
+      console.log("Event");
       $(this).addClass('selected');
       break;
 
     case $(this).hasClass('item_2'):
-      console.log("Item 2");
+      console.log("Reminder");
       $(this).addClass('selected');
       break;
 
     case $(this).hasClass('item_3'):
-      console.log("Item 3");
+      console.log("Task");
       $(this).addClass('selected');
       break;
 
     case $(this).hasClass('item_4'):
-      console.log("Item 4");
+      console.log("Budget");
       $(this).addClass('selected');
       break;
 
     case $(this).hasClass('item_5'):
-      console.log("Item 5");
+      console.log("Food");
       $(this).addClass('selected');
       break;
   }
+}); //Event type click
+
+$('.item_1').click(function () {
+  $('.event-description, .description-label, .location-input, .location-label, .time-input, .time-label').addClass('show-input');
+  $('.amount-input, .amount-label').removeClass('show-input');
+});
+$('.item_2').click(function () {
+  $('.time-input, .time-label').addClass('show-input');
+  $('.event-description, .description-label, .location-input, .location-label').removeClass('show-input');
+  $('.amount-input, .amount-label').removeClass('show-input');
+});
+$('.item_3').click(function () {
+  $('.event-description, .description-label, .time-input, .time-label').addClass('show-input');
+  $('.amount-input, .amount-label, .location-input, .location-label').removeClass('show-input');
+});
+$('.item_4').click(function () {
+  $('.event-description, .description-label, .location-input, .location-label, .time-input, .time-label').removeClass('show-input');
+  $('.amount-input, .amount-label').addClass('show-input');
+});
+$('.item_5').click(function () {
+  $('.event-description, .description-label').addClass('show-input');
+  $('.amount-input, .amount-label, .location-input, .location-label, .time-input, .time-label').removeClass('show-input');
 }); //Select frequency in form
 
 $('.checkbox label').click(function () {
