@@ -6,6 +6,7 @@ const { MONTHS } = require('./utilities/months.constant.js');
 let clock = new Date();
 let month = clock.getMonth();
 let year = clock.getFullYear();
+var day = clock.getDate();
 
 console.log("Begin your javascript");
 
@@ -314,6 +315,13 @@ $('.close-day').click(function(){
 
 //Open form to add items to the calendar
 $('.add-item-button').click(function() {
+    let month = (clock.getMonth() + 1);
+    if (month < 10)
+        month = "0" + month;
+    if (day < 10)
+        day = "0" + day;
+    var today = clock.getFullYear() + '-' + month + '-' + day;
+    $('.date-input').val(today);
     $('.add-item-form').addClass('show-form');
     $('.clicked-day').removeClass('double-click');
 })
