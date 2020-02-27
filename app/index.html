@@ -107,23 +107,57 @@
                 </div>
                 <button class="add-item-button entypo-list-add"></button>
                 <div class="add-item-form">
+                    <div class="form-nav">
+                        <h2>Place Items on Calendar</h2>
+                        <div class="close-form entypo-cancel"></div>
+                    </div>
                     <form>
-                        <select>
+                        <label>Select Type</label>
+                        <div class="select-item">
+                            <input type="checkbox" id="checkbox1" />
+                            <label for="checkbox1" class="item_1">Event</label>
+
+                            <input type="checkbox" id="checkbox2" />
+                            <label for="checkbox2" class="item_2">Reminder</label>
                             
-                        </select>
-                        <ul class="checkbox">
-                            <li><input class="frequency first-checkbox" type="checkbox" value="Once" checked />Once</li>
-                            <li><input class="frequency" type="checkbox" value="Daily" />Daily</li>
-                            <li><input class="frequency" type="checkbox" value="Weekly" />Weekly</li>
-                            <li><input class="frequency" type="checkbox" value="Bi-weekly" />Bi-weekly</li>
-                            <li><input class="frequency" type="checkbox" value="Monthly" />Monthly</li>
-                            <li><input class="frequency" type="checkbox" value="Semi-annual" />Semi-annual</li>
-                            <li><input class="frequency" type="checkbox" value="Annual" />Annual</li>
-                        </ul>
+                            <input type="checkbox" id="checkbox3" />
+                            <label for="checkbox3" class="item_3">Task</label>
+                            
+                            <input type="checkbox" id="checkbox4" />
+                            <label for="checkbox4" class="item_4">Budget</label>
+                            
+                            <input type="checkbox" id="checkbox5" />
+                            <label for="checkbox5" class="item_5">Food</label>
+                        </div>
+
+                        <label>Select Date</label>
                         <input class="date-input" type="date" />
+                        <label>Select Frequency</label>
+
+                        <div class="checkbox">
+                            <input class="frequency first-checkbox" type="checkbox" id="frequency1" value="Once" checked/>
+                            <label for="frequency1" class="frequency_1">Once</label>
+                        
+                            <input class="frequency" type="checkbox" value="Daily" id="frequency2"/>
+                            <label for="frequency2" class="frequency_2">Daily</label>
+                        
+                            <input class="frequency" type="checkbox" value="Weekly" id="frequency3"/>
+                            <label for="frequency3" class="frequency_3">Weekly</label>
+                        
+                            <input class="frequency" type="checkbox" value="Bi-weekly" id="frequency4"/>
+                            <label for="frequency4" class="frequency_4">Bi-Weekly</label>
+                        
+                            <input class="frequency" type="checkbox" value="Monthly" id="frequency5"/>
+                            <label for="frequency5" class="frequency_5">Monthly</label>
+
+                            <input class="frequency" type="checkbox" value="Semi-annual" id="frequency_6" />
+                            <label for="frequency6" class="frequency6">Semi-annual</label>
+
+                            <input class="frequency" type="checkbox" value="Annual" id="frequency7" />
+                            <label for="frequency7" class="frequency_7">Annual</label>
+                        </div>
                         <button class="submit-form" type="submit">Enter</button>
                     </form>
-                    <div class="close-form entypo-cancel"></div>
                 </div>
             </section>
 

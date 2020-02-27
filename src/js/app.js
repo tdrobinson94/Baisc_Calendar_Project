@@ -329,3 +329,76 @@ $('.add-item-button').click(function() {
 $('.close-form').click(function () {
     $('.add-item-form').removeClass('show-form');
 })
+
+//======== Only select one checkbox at a time ========//
+$('.frequency').on('change', function () {
+    $('.frequency').not(this).prop('checked', false);
+});
+
+//Select type in form
+$('.select-item label').click(function () {
+
+    $('.select-item label').removeClass('selected');
+
+    switch ($(this).hasClass('item_1')) {
+        case $(this).hasClass('item_1'):
+            console.log("Item 1")
+            $(this).addClass('selected')
+            break;
+        case $(this).hasClass('item_2'):
+            console.log("Item 2")
+            $(this).addClass('selected')
+            break;
+        case $(this).hasClass('item_3'):
+            console.log("Item 3")
+            $(this).addClass('selected')
+            break;
+        case $(this).hasClass('item_4'):
+            console.log("Item 4")
+            $(this).addClass('selected')
+            break;
+        case $(this).hasClass('item_5'):
+            console.log("Item 5")
+            $(this).addClass('selected')
+            break;
+    }
+
+});
+
+//Select frequency in form
+$('.checkbox label').click(function () {
+
+    $('.checkbox label').removeClass('selected');
+
+    switch ($(this).hasClass('frequency_1')) {
+        case $(this).hasClass('frequency_1'):
+            console.log("Item 1")
+            $(this).addClass('selected')
+            break;
+        case $(this).hasClass('frequency_2'):
+            console.log("Item 2")
+            $(this).addClass('selected')
+            break;
+        case $(this).hasClass('frequency_3'):
+            console.log("Item 3")
+            $(this).addClass('selected')
+            break;
+        case $(this).hasClass('frequency_4'):
+            console.log("Item 4")
+            $(this).addClass('selected')
+            break;
+        case $(this).hasClass('frequency_5'):
+            console.log("Item 5")
+            $(this).addClass('selected')
+            break;
+        case $(this).hasClass('frequency_6'):
+            console.log("Item 5")
+            $(this).addClass('selected')
+            break;
+        case $(this).hasClass('frequency_7'):
+            console.log("Item 5")
+            $(this).addClass('selected')
+            break;
+    }
+
+});
