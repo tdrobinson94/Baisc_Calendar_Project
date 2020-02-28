@@ -230,17 +230,17 @@ html {
       display: none; }
   .calendar_wrapper .add-item-form {
     position: fixed;
-    bottom: 30px;
+    bottom: -5px;
     right: 30px;
     font-size: 20px;
-    width: 0%;
+    width: 10%;
     height: 0px;
     overflow: hidden;
     max-width: 800px;
-    transition: border-radius .5s, width .3s, height .4s;
+    transition: width .4s, height .4s;
     transition-timing-function: ease-in-out;
-    border: 1px solid #333333;
-    border-radius: 100%; }
+    background: #fff;
+    border: 1px solid #333333; }
     @media screen and (min-width: 800px) {
       .calendar_wrapper .add-item-form {
         right: 50%;
@@ -255,7 +255,7 @@ html {
       left: 5%;
       max-width: 800px;
       overflow: initial;
-      transition: width .3s, height .4s;
+      transition: width .4s, height .4s, border-radius .5s;
       transition-timing-function: ease-in-out;
       background-color: #fff;
       z-index: 999;

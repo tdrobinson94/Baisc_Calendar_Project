@@ -322,17 +322,17 @@ html {
 
   .add-item-form {
     position: fixed;
-    bottom: 30px;
+    bottom: -5px;
     right: 30px;
     font-size: 20px;
-    width: 0%;
+    width: 10%;
     height: 0px;
     overflow: hidden;
     max-width: $end-small;
-    transition: border-radius .5s, width .3s, height .4s;
+    transition:  width .4s, height .4s;
     transition-timing-function: ease-in-out;
+    background: $textwht;
     border: 1px solid $textdrk;
-    border-radius: 100%;
 
     @media screen and (min-width: $end-small) {
       right: 50%;
@@ -349,7 +349,7 @@ html {
       left: 5%;
       max-width: $end-small;
       overflow: initial;
-      transition: width .3s, height .4s;
+      transition: width .4s, height .4s, border-radius .5s;
       transition-timing-function: ease-in-out;
       background-color: $textwht;
       z-index: 999;
