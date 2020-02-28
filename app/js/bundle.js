@@ -27729,19 +27729,19 @@ const {
 let clock = new Date();
 let month = clock.getMonth();
 let year = clock.getFullYear();
-var day = clock.getDate();
+var day = clock.getDate(); //Template literals for info that goes inside of $('.num-box')
+
+const num_container = `<div class="num-container"><span class="num"></span></div>`;
+const weekday = `<div class="weekday"><span class="num-date"></span></div>`;
+const main_info = `<div class="main-info"></div>`;
+const date_value = `<div class="date-value"></div>`;
+const close_day = `<div class="close-day entypo-cancel"></div>`;
 console.log("Begin your javascript"); // Creates the contents of each calendar box
 
 (function setupWeeks() {
-  let numOfWeeks = $('.days').length; //Template literals for info that goes inside of $('.num-box')
+  let numOfBoxes = $('.num-box').length + 1; //Add html for each row or week
 
-  const num_container = `<div class="num-container"><span class="num"></span></div>`;
-  const weekday = `<div class="weekday"><span class="num-date"></span></div>`;
-  const main_info = `<div class="main-info"></div>`;
-  const date_value = `<div class="date-value"></div>`;
-  const close_day = `<div class="close-day entypo-cancel"></div>`; //Add html for each row or week
-
-  for (let i = 1; i <= numOfWeeks; i++) {
+  for (let i = 1; i <= numOfBoxes; i++) {
     $('.num-box').html(num_container + weekday + main_info + date_value + close_day);
   }
 })();
@@ -27794,7 +27794,7 @@ $('.month-selector, .year-selector').on('change', function (event) {
     let currentYear = $(document).find('#year').val();
     let startOfMonth = new Date(currentYear, currentMonth, 1).getDay();
     let monthDays = MONTHS[$(document).find('#month').val()].days;
-    let days = $(document).find('.days').children();
+    let days = $(document).find('.num-box');
     $(document).find('.num').empty();
 
     _.range(1, 43).forEach(function (dayIndex, i) {
@@ -27894,7 +27894,7 @@ $('.month-selector, .year-selector').on('change', function (event) {
     let startOfMonth = new Date($(document).find('#year').val(), $(document).find('#month').val(), 1).getDay();
     let monthDays = MONTHS[$(document).find('#month').val()].days;
     let prevMonthDays = $(document).find('#month').val() == 0 ? 31 : MONTHS[$(document).find('#month').val() - 1].days;
-    let days = $(document).find('.days').children();
+    let days = $(document).find('.num-box');
 
     let prevDays = _.range(1, prevMonthDays + 1).slice(-startOfMonth);
 
@@ -27930,14 +27930,12 @@ $('.month-selector, .year-selector').on('change', function (event) {
       $('body, html').animate({
         scrollTop: $('.day_background_color').offset().top - 150
       }, 500);
-      console.log($('.current-day').html());
       $(document).find('#todays-day').html($('.current-day').html());
     } else if ($('.num-date').hasClass('first-day') === true) {
       $('.first-day').parent().parent().addClass('selected-day');
       $('body, html').animate({
         scrollTop: $('.first-day').offset().top - 150
       }, 500);
-      $(document).find('#todays-day').val($('.first-day').html());
       $('.first-day').parent().parent().addClass('clicked-day');
     }
   }
@@ -27950,6 +27948,7 @@ $('.month-selector').change(); //============= Scroll Months functionality =====
 //===== Go to previous month =======//
 
 $('.prev').click(function () {
+  $('.extra').hide();
   $('.add-item-form').removeClass('show-form');
   $('.num-box').removeClass('selected-day');
   $('.clicked-day').removeClass('double-click');
@@ -27981,6 +27980,7 @@ $('.prev').click(function () {
 }); //===== Go to today's date =======//
 
 $('.current').click(function () {
+  $('.extra').hide();
   $('.add-item-form').removeClass('show-form');
   $('.num-box').removeClass('selected-day');
   $('.clicked-day').removeClass('double-click');
@@ -27994,6 +27994,7 @@ $('.current').click(function () {
 }); //===== Go to next month =======//
 
 $('.next').click(function () {
+  $('.extra').hide();
   $('.add-item-form').removeClass('show-form');
   $('.num-box').removeClass('selected-day');
   $('.clicked-day').removeClass('double-click');
@@ -28025,28 +28026,35 @@ $('.next').click(function () {
 }); // Click day functionality
 
 $('.num-box').click(function () {
-  $('.num-box').removeClass('clicked-day');
-  $('.add-item-form').removeClass('show-form');
-
   if ($(this).hasClass('dead_month_color')) {
     $('.dead_month_color').click(false);
   } else {
+    $('.num-box').removeClass('clicked-day');
+    $('.add-item-form').removeClass('show-form');
+    $('.extra').hide();
     $(this).addClass('clicked-day');
-    $('body, html').animate({
-      scrollTop: $(this).offset().top - 150
-    }, 500);
   }
 
   if ($(this).hasClass('clicked-day') && $(window).width() >= 800) {
     $('.clicked-day').dblclick(function () {
       console.log('opening day');
       $('.clicked-day').addClass('double-click');
+      $('.extra').show();
     });
   } else {}
+
+  function scrollDay() {
+    $('body, html').animate({
+      scrollTop: $('.clicked-day').offset().top - 250
+    }, 500);
+  }
+
+  window.setTimeout(scrollDay, 300);
 });
 $('.close-day').click(function () {
   console.log('closing day');
   $('.clicked-day').removeClass('double-click');
+  $('.extra').hide();
 }); //Open form to add items to the calendar
 
 $('.add-item-button').click(function () {
@@ -28167,6 +28175,8 @@ $('.checkbox label').click(function () {
       break;
   }
 });
+$('.scroll-up').click(function () {});
+$('.scroll-down').click(function () {});
 
 },{"./utilities/months.constant.js":4,"jquery":1,"lodash":2}],4:[function(require,module,exports){
 const MONTHS = [{
