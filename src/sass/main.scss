@@ -56,10 +56,10 @@ html {
     top: 0px;
     z-index: 1;
     position: sticky;
+    padding: 5px 0;
     // border-radius: 15px;
     background-color: $primary;
     .select-form{
-      height: 55px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -81,6 +81,11 @@ html {
 
           option {
             color: $textdrk;
+          }
+
+          &:hover {
+            color: $textdrk;
+            opacity: .4;
           }
         }
         .todays-day {
@@ -122,14 +127,23 @@ html {
           font-weight: bold;
           background: transparent;
           border: none;
-          opacity: .25;
           z-index: 2;
           transition: all .2s ease-in-out;
-          font-size: 17px;
+          font-size: 13px;
+          position: relative;
+          color: $textwht;
+
+          &:before {
+            font-family: 'entypo', sans-serif;
+            position: absolute;
+            font-size: 28px;
+            left: 0px;
+            top: -10.5px;
+          }
       }
       .button:hover{
-        color: $textwht;
-        opacity: 10;
+        color: $textdrk;
+        opacity: .4;
         transition: all .2s ease-in-out;
       }
   }

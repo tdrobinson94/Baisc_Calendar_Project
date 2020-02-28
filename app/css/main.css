@@ -34,9 +34,9 @@ html {
     top: 0px;
     z-index: 1;
     position: sticky;
+    padding: 5px 0;
     background-color: red; }
     .calendar_wrapper .month .select-form {
-      height: 55px;
       display: flex;
       align-items: center;
       justify-content: center; }
@@ -56,6 +56,9 @@ html {
               font-size: 35px; } }
           .calendar_wrapper .month .select-form .date-selectors .selector option, .calendar_wrapper .month .select-form .date-selectors .todays-day option {
             color: #333333; }
+          .calendar_wrapper .month .select-form .date-selectors .selector:hover, .calendar_wrapper .month .select-form .date-selectors .todays-day:hover {
+            color: #333333;
+            opacity: .4; }
         .calendar_wrapper .month .select-form .date-selectors .todays-day {
           width: 65px; }
       .calendar_wrapper .month .select-form .settings {
@@ -82,13 +85,20 @@ html {
       font-weight: bold;
       background: transparent;
       border: none;
-      opacity: .25;
       z-index: 2;
       transition: all .2s ease-in-out;
-      font-size: 17px; }
+      font-size: 13px;
+      position: relative;
+      color: #fff; }
+      .calendar_wrapper .calendar-controls .button:before {
+        font-family: 'entypo', sans-serif;
+        position: absolute;
+        font-size: 28px;
+        left: 0px;
+        top: -10.5px; }
     .calendar_wrapper .calendar-controls .button:hover {
-      color: #fff;
-      opacity: 10;
+      color: #333333;
+      opacity: .4;
       transition: all .2s ease-in-out; }
   .calendar_wrapper .weekday-initials {
     display: flex;

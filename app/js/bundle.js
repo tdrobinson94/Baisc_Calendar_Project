@@ -27930,7 +27930,8 @@ $('.month-selector, .year-selector').on('change', function (event) {
       $('body, html').animate({
         scrollTop: $('.day_background_color').offset().top - 150
       }, 500);
-      $(document).find('#todays-day').val($('.current-day').html());
+      console.log($('.current-day').html());
+      $(document).find('#todays-day').html($('.current-day').html());
     } else if ($('.num-date').hasClass('first-day') === true) {
       $('.first-day').parent().parent().addClass('selected-day');
       $('body, html').animate({
@@ -28031,7 +28032,6 @@ $('.num-box').click(function () {
     $('.dead_month_color').click(false);
   } else {
     $(this).addClass('clicked-day');
-    $(document).find('#todays-day').val($(this).children('.weekday').children().html());
     $('body, html').animate({
       scrollTop: $(this).offset().top - 150
     }, 500);
