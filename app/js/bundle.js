@@ -27794,7 +27794,7 @@ $('.month-selector, .year-selector').on('change', function (event) {
     let currentYear = $(document).find('#year').val();
     let startOfMonth = new Date(currentYear, currentMonth, 1).getDay();
     let monthDays = MONTHS[$(document).find('#month').val()].days;
-    let days = $(document).find('.num-box');
+    let days = $(document).find('.days').children();
     $(document).find('.num').empty();
 
     _.range(1, 43).forEach(function (dayIndex, i) {
@@ -27894,7 +27894,7 @@ $('.month-selector, .year-selector').on('change', function (event) {
     let startOfMonth = new Date($(document).find('#year').val(), $(document).find('#month').val(), 1).getDay();
     let monthDays = MONTHS[$(document).find('#month').val()].days;
     let prevMonthDays = $(document).find('#month').val() == 0 ? 31 : MONTHS[$(document).find('#month').val() - 1].days;
-    let days = $(document).find('.num-box');
+    let days = $(document).find('.days').children();
 
     let prevDays = _.range(1, prevMonthDays + 1).slice(-startOfMonth);
 
@@ -27937,6 +27937,7 @@ $('.month-selector, .year-selector').on('change', function (event) {
         scrollTop: $('.first-day').offset().top - 150
       }, 500);
       $('.first-day').parent().parent().addClass('clicked-day');
+      $('.dead_month_color').removeClass('clicked-day');
     }
   }
 
@@ -28035,7 +28036,7 @@ $('.num-box').click(function () {
     $(this).addClass('clicked-day');
   }
 
-  if ($(this).hasClass('clicked-day') && $(window).width() >= 800) {
+  if ($(this).hasClass('clicked-day')) {
     $('.clicked-day').dblclick(function () {
       console.log('opening day');
       $('.clicked-day').addClass('double-click');
