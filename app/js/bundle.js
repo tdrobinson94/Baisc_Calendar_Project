@@ -28026,23 +28026,34 @@ $('.next').click(function () {
   window.setTimeout(scrollDay, 500);
 }); // Click day functionality
 
-$('.num-box').click(function () {
-  if ($(this).hasClass('dead_month_color')) {
-    $('.dead_month_color').click(false);
-  } else {
-    $('.num-box').removeClass('clicked-day');
-    $('.add-item-form').removeClass('show-form');
+$('.num-box').click(function (e) {
+  if (e.target === $(this).children().get()[4]) {
+    console.log('closing day');
+    $('.clicked-day').removeClass('double-click');
     $('.extra').hide();
-    $(this).addClass('clicked-day');
-  }
+  } else {
+    if ($(this).hasClass('dead_month_color')) {
+      $('.dead_month_color').click(false);
+    } else {
+      $('.num-box').removeClass('clicked-day');
+      $('.add-item-form').removeClass('show-form');
+      $('.extra').hide();
+      $(this).addClass('clicked-day');
+    }
 
-  if ($(this).hasClass('clicked-day')) {
-    $('.clicked-day').dblclick(function () {
-      console.log('opening day');
+    if ($(this).hasClass('clicked-day')) {
+      $('.clicked-day').dblclick(function () {
+        console.log('opening day');
+        $('.clicked-day').addClass('double-click');
+        $('.extra').show();
+      });
+    } else {}
+
+    if ($(window).width() <= 500) {
       $('.clicked-day').addClass('double-click');
       $('.extra').show();
-    });
-  } else {}
+    } else {}
+  }
 
   function scrollDay() {
     $('body, html').animate({
@@ -28051,11 +28062,6 @@ $('.num-box').click(function () {
   }
 
   window.setTimeout(scrollDay, 300);
-});
-$('.close-day').click(function () {
-  console.log('closing day');
-  $('.clicked-day').removeClass('double-click');
-  $('.extra').hide();
 }); //Open form to add items to the calendar
 
 $('.add-item-button').click(function () {
@@ -28068,7 +28074,11 @@ $('.add-item-button').click(function () {
   $('.date-input').val(today);
   $('.add-item-form').addClass('show-form');
   $('.event-description, .description-label, .location-input, .location-label, .time-input, .time-label').addClass('show-input');
-  $('.clicked-day').removeClass('double-click');
+
+  if ($(window).width() <= 800) {} else {
+    $('.clicked-day').removeClass('double-click');
+  }
+
   $('.select-item label.item_1').addClass('selected');
   $('.checkbox label.frequency_1').addClass('selected');
 });
@@ -28176,8 +28186,6 @@ $('.checkbox label').click(function () {
       break;
   }
 });
-$('.scroll-up').click(function () {});
-$('.scroll-down').click(function () {});
 
 },{"./utilities/months.constant.js":4,"jquery":1,"lodash":2}],4:[function(require,module,exports){
 const MONTHS = [{
