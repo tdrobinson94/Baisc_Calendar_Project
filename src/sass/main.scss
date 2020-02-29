@@ -135,10 +135,15 @@ html {
 
           &:before {
             position: absolute;
-            font-size: 28px;
-            left: 0px;
-            top: -10.5px;
+            font-size: 30px;
+            left: -0.75px;
+            top: -11.5px;
+          }
 
+          &.entypo-calendar {
+            &:before {
+              font-weight: 100;
+            }
           }
 
           @media screen and (max-width: $end-small) {
@@ -309,9 +314,13 @@ html {
               @media screen and (max-width: $end-small) {
                 bottom: 0;
                 box-shadow: none;
-                top: 87px;
+                top: 96px;
                 margin: 0;
                 height: auto;
+              }
+
+              @media screen and (max-width: $mid-small) {
+                top: 85px;
               }
 
               .weekday {
@@ -357,6 +366,7 @@ html {
     transition-timing-function: ease-in-out;
     background: $textwht;
     border: 1px solid $textdrk;
+    z-index: 99999;
 
     @media screen and (min-width: $end-small) {
       right: 50%;
@@ -376,7 +386,6 @@ html {
       transition: width .4s, height .4s, border-radius .5s;
       transition-timing-function: ease-in-out;
       background-color: $textwht;
-      z-index: 9999;
       box-shadow: 1px 1px 10px $textdrk;
       float: none;
       overflow: auto;

@@ -198,7 +198,12 @@ $('.month-selector, .year-selector').on('change', function (event) {
     function scrollDay() {
         if ($('.num-box').hasClass('day_background_color') === true) {
             $('body, html').animate({ scrollTop: $('.day_background_color').offset().top - 150 }, 500);
-            $(document).find('#todays-day').html($('.current-day').html());
+
+            if ($(document).find('#todays-day').html($('.current-day').html()) < 10) {
+                $(document).find('#todays-day').html('0' + $('.current-day').html())
+            } else {
+                $(document).find('#todays-day').html($('.current-day').html())
+            }
         } else if ($('.num-date').hasClass('first-day') === true) {
             $('.first-day').parent().parent().addClass('selected-day');
             $('body, html').animate({ scrollTop: $('.first-day').offset().top - 150 }, 500);
@@ -314,12 +319,13 @@ $('.num-box').click(function(e) {
 
         }
 
-        if ($(window).width() <= 500) {
-            $('.clicked-day').addClass('double-click');
-            $('.extra').show()
-        } else {
+        // Changes behavior to single click in mobile
+        // if ($(window).width() <= 500) {
+        //     $('.clicked-day').addClass('double-click');
+        //     $('.extra').show()
+        // } else {
 
-        }
+        // }
     }
 
     function scrollDay() {

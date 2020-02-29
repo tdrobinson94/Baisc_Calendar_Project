@@ -92,9 +92,11 @@ html {
       color: #fff; }
       .calendar_wrapper .calendar-controls .button:before {
         position: absolute;
-        font-size: 28px;
-        left: 0px;
-        top: -10.5px; }
+        font-size: 30px;
+        left: -0.75px;
+        top: -11.5px; }
+      .calendar_wrapper .calendar-controls .button.entypo-calendar:before {
+        font-weight: 100; }
       @media screen and (max-width: 800px) {
         .calendar_wrapper .calendar-controls .button {
           outline: none; } }
@@ -224,9 +226,12 @@ html {
               .calendar_wrapper .calendar-container .days .num-box.clicked-day.double-click {
                 bottom: 0;
                 box-shadow: none;
-                top: 87px;
+                top: 96px;
                 margin: 0;
                 height: auto; } }
+            @media screen and (max-width: 550px) {
+              .calendar_wrapper .calendar-container .days .num-box.clicked-day.double-click {
+                top: 85px; } }
             .calendar_wrapper .calendar-container .days .num-box.clicked-day.double-click .weekday {
               margin-top: 25px; }
             .calendar_wrapper .calendar-container .days .num-box.clicked-day.double-click .close-day {
@@ -260,7 +265,8 @@ html {
     transition: width .4s, height .4s;
     transition-timing-function: ease-in-out;
     background: #fff;
-    border: 1px solid #333333; }
+    border: 1px solid #333333;
+    z-index: 99999; }
     @media screen and (min-width: 800px) {
       .calendar_wrapper .add-item-form {
         right: 50%;
@@ -278,7 +284,6 @@ html {
       transition: width .4s, height .4s, border-radius .5s;
       transition-timing-function: ease-in-out;
       background-color: #fff;
-      z-index: 9999;
       box-shadow: 1px 1px 10px #333333;
       float: none;
       overflow: auto;
