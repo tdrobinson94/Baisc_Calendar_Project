@@ -28053,12 +28053,12 @@ $('.num-box').click(function (e) {
         $('.extra').show();
       });
     } else {} // Changes behavior to single click in mobile
-    // if ($(window).width() <= 500) {
-    //     $('.clicked-day').addClass('double-click');
-    //     $('.extra').show()
-    // } else {
-    // }
 
+
+    if ($(window).width() <= 500) {
+      $('.clicked-day').addClass('double-click');
+      $('.extra').show();
+    } else {}
   }
 
   function scrollDay() {
