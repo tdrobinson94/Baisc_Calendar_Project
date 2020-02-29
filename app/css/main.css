@@ -79,7 +79,7 @@ html {
         transition: all .2s ease-in-out; }
   .calendar_wrapper .calendar-controls {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin: 10px 0; }
     .calendar_wrapper .calendar-controls .button {
       font-weight: bold;
@@ -94,7 +94,7 @@ html {
         position: absolute;
         font-size: 30px;
         left: -0.75px;
-        top: -11.5px; }
+        top: -11.9px; }
       .calendar_wrapper .calendar-controls .button.entypo-calendar:before {
         font-weight: 100; }
       @media screen and (max-width: 800px) {
@@ -234,6 +234,9 @@ html {
                 top: 85px; } }
             .calendar_wrapper .calendar-container .days .num-box.clicked-day.double-click .weekday {
               margin-top: 25px; }
+              @media screen and (max-width: 800px) {
+                .calendar_wrapper .calendar-container .days .num-box.clicked-day.double-click .weekday .num-date {
+                  font-size: 20px; } }
             .calendar_wrapper .calendar-container .days .num-box.clicked-day.double-click .close-day {
               display: block;
               position: absolute;
@@ -243,6 +246,10 @@ html {
               padding: 0px 20px;
               cursor: pointer;
               color: red; }
+              .calendar_wrapper .calendar-container .days .num-box.clicked-day.double-click .close-day:hover {
+                color: #333333;
+                opacity: .4;
+                transition: all .2s ease-in-out; }
 
 @keyframes grow {
   50% {
@@ -300,7 +307,9 @@ html {
           transform: translateX(0); } }
     .calendar_wrapper .add-item-form .form-nav {
       position: relative;
-      padding: 20px 0 0 20px; }
+      padding: 20px 0 20px 20px;
+      background: red;
+      color: #fff; }
       .calendar_wrapper .add-item-form .form-nav h2 {
         margin: 0;
         margin-right: 54px; }
@@ -378,7 +387,11 @@ html {
       font-size: 27px;
       padding: 0px 20px;
       cursor: pointer;
-      color: red; }
+      color: #fff; }
+      .calendar_wrapper .add-item-form .close-form:hover {
+        color: #333333;
+        opacity: .4;
+        transition: all .2s ease-in-out; }
   .calendar_wrapper .add-item-button {
     padding: 15px;
     position: fixed;
@@ -390,6 +403,10 @@ html {
     color: #fff;
     right: 20px;
     z-index: 999; }
+    .calendar_wrapper .add-item-button:hover:before {
+      color: #333333;
+      opacity: .4;
+      transition: all .2s ease-in-out; }
     @media screen and (min-width: 800px) {
       .calendar_wrapper .add-item-button {
         right: 50%;

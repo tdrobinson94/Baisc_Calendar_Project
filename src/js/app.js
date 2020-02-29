@@ -13,7 +13,7 @@ const num_container = `<div class="num-container"><span class="num"></span></div
 const weekday = `<div class="weekday"><span class="num-date"></span></div>`;
 const main_info = `<div class="main-info"></div>`;
 const date_value = `<div class="date-value"></div>`;
-const close_day = `<div class="close-day entypo-cancel"></div>`;
+const close_day = `<div class="close-day entypo-down-open"></div>`;
 
 console.log("Begin your javascript");
 

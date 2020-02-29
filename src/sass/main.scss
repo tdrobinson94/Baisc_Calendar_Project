@@ -115,7 +115,7 @@ html {
   }
   .calendar-controls{
       display: flex;
-      justify-content: space-around;
+      justify-content: space-evenly;
       margin: 10px 0;
       .prev{
 
@@ -137,7 +137,7 @@ html {
             position: absolute;
             font-size: 30px;
             left: -0.75px;
-            top: -11.5px;
+            top: -11.9px;
           }
 
           &.entypo-calendar {
@@ -325,6 +325,12 @@ html {
 
               .weekday {
                 margin-top: 25px;
+
+                .num-date{
+                  @media screen and (max-width: $end-small) {
+                    font-size: 20px;
+                  }
+                }
               }
 
               .close-day {
@@ -336,6 +342,12 @@ html {
                 padding: 0px 20px;
                 cursor: pointer;
                 color: $alert;
+
+                &:hover {
+                  color: #333333;
+                  opacity: .4;
+                  transition: all .2s ease-in-out;
+                }
               }
             }
           // }
@@ -406,7 +418,9 @@ html {
 
     .form-nav {
       position: relative;
-      padding: 20px 0 0 20px;
+      padding: 20px 0 20px 20px;
+      background: $alert;
+      color: $textwht;
       h2 {
         margin: 0;
         margin-right: 54px;
@@ -513,7 +527,13 @@ html {
         font-size: 27px;
         padding: 0px 20px;
         cursor: pointer;
-        color: $alert;
+        color: $textwht;
+
+        &:hover {
+          color: #333333;
+          opacity: .4;
+          transition: all .2s ease-in-out;
+        }
       }
     }
 
@@ -528,6 +548,14 @@ html {
     color: #fff;
     right: 20px;
     z-index: 999;
+
+    &:hover {
+      &:before {
+        color: #333333;
+        opacity: .4;
+        transition: all .2s ease-in-out;
+      }
+    }
 
     @media screen and (min-width: $end-small) {
       right: 50%;
