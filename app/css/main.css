@@ -146,10 +146,7 @@ html {
         transition: all .1s ease-in-out; }
         @media screen and (max-width: 800px) {
           .calendar_wrapper .calendar-container .days .num-box {
-            height: 56.5px; } }
-        @media screen and (max-width: 550px) {
-          .calendar_wrapper .calendar-container .days .num-box {
-            height: 46.5px; } }
+            height: 100px; } }
         .calendar_wrapper .calendar-container .days .num-box .close-day {
           display: none; }
         .calendar_wrapper .calendar-container .days .num-box .num-container {
@@ -228,7 +225,8 @@ html {
                 bottom: 0;
                 box-shadow: none;
                 top: 87px;
-                margin: 0; } }
+                margin: 0;
+                height: auto; } }
             .calendar_wrapper .calendar-container .days .num-box.clicked-day.double-click .weekday {
               margin-top: 25px; }
             .calendar_wrapper .calendar-container .days .num-box.clicked-day.double-click .close-day {
@@ -293,7 +291,7 @@ html {
           left: 0;
           right: 0;
           bottom: 0;
-          height: 101%;
+          height: 100%;
           transform: translateX(0); } }
     .calendar_wrapper .add-item-form .form-nav {
       position: relative;

@@ -207,11 +207,7 @@ html {
         transition: all .1s ease-in-out;
         
         @media screen and (max-width: $end-small) {
-          height: 56.5px;
-        }
-
-        @media screen and (max-width: $mid-small) {
-          height: 46.5px;
+          height: 100px;
         }
 
 
@@ -315,6 +311,7 @@ html {
                 box-shadow: none;
                 top: 87px;
                 margin: 0;
+                height: auto;
               }
 
               .weekday {
@@ -392,7 +389,7 @@ html {
         left: 0;
         right: 0;
         bottom: 0;
-        height: 101%;
+        height: 100%;
         transform: translateX(0);
       }
 
