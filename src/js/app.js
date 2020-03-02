@@ -69,7 +69,7 @@ $('.month-selector, .year-selector').on('change', function (event) {
     event.preventDefault();
     $('.add-item-form').removeClass('show-form');
     $('.num-box').removeClass('clicked-day');
-    $('.num-date').removeClass('first-day');
+    $('.num-date').removeClass('first-day current-day');
     $('.num-box').removeClass('selected-day');
 
     //=================== Render Current month days as well as next month days ==================//
@@ -82,19 +82,17 @@ $('.month-selector, .year-selector').on('change', function (event) {
         let monthDays = MONTHS[$(document).find('#month').val()].days;
         let days = $(document).find('.days').children();
         $(document).find('.num').empty();
+
         _.range(1, 43).forEach(function (dayIndex, i) {
             let day = $(days[startOfMonth + dayIndex - 1]);
+
             if (clock.getDate() === dayIndex && clock.getMonth() == $('#month').val() && clock.getFullYear() == $('#year').val()) {
-                day.find('.num-container').parent().addClass("day_background_color");
                 day.find('.weekday').children().addClass('current-day');
-                day.find('.weekday').parent().addClass('clicked-day');
-                day.find('.num-container').parent().addClass("selected-day");
-                day.find('.transaction-button').addClass('show');
+                day.find('.weekday').parent().addClass('clicked-day day_background_color selected-day');
                 day.find('.num-date').parent().parent().removeClass("dead_month_color");
             } else {
-                day.find('.num-container').parent().removeClass("day_background_color");
                 day.find('.weekday').children().removeClass('current-day');
-                day.find('.num-date').parent().parent().removeClass("dead_month_color");
+                day.find('.num-date').parent().parent().removeClass("dead_month_color day_background_color");
             }
             if (dayIndex > monthDays) {
                 day.find('.num').html(dayIndex - monthDays).parent().parent().addClass("dead_month_color");
@@ -136,7 +134,7 @@ $('.month-selector, .year-selector').on('change', function (event) {
                         let newDays = dayIndex;
                         let standardNewDays = '0' + dayIndex;
                         day.find('.date-value').html(currentYear + '-' + standardNewMonth + '-' + standardNewDays);
-                        day.find('.num-date').html(newDays);
+                        day.find('.num-date').html("&nbsp" + newDays + "&nbsp");
                     } else {
                         day.find('.date-value').html(currentYear + '-' + standardNewMonth + '-' + (dayIndex));
                         day.find('.num-date').html((dayIndex));
@@ -146,14 +144,14 @@ $('.month-selector, .year-selector').on('change', function (event) {
                         let newDays = dayIndex;
                         let standardNewDays = '0' + dayIndex;
                         day.find('.date-value').html(currentYear + '-' + thisMonth + '-' + standardNewDays);
-                        day.find('.num-date').html(newDays);
+                        day.find('.num-date').html("&nbsp" + newDays + "&nbsp");
                     } else {
                         day.find('.date-value').html(currentYear + '-' + thisMonth + '-' + (dayIndex));
                         day.find('.num-date').html((dayIndex));
                     }
                 }
             }
-            if (day.find('.num-date').html() === '1') {
+            if (day.find('.num-date').html() === '&nbsp;' + '1' + '&nbsp;') {
                 day.find('.num-date').addClass('first-day');
             } else {
                 day.find('.num-date').removeClass('first-day');
@@ -198,16 +196,10 @@ $('.month-selector, .year-selector').on('change', function (event) {
     function scrollDay() {
         if ($('.num-box').hasClass('day_background_color') === true) {
             $('body, html').animate({ scrollTop: $('.day_background_color').offset().top - 150 }, 500);
-
-            if ($(document).find('#todays-day').html($('.current-day').html()) < 10) {
-                $(document).find('#todays-day').html('0' + $('.current-day').html())
-            } else {
-                $(document).find('#todays-day').html($('.current-day').html())
-            }
+            $(document).find('#todays-day').html($('.current-day').html())
         } else if ($('.num-date').hasClass('first-day') === true) {
-            $('.first-day').parent().parent().addClass('selected-day');
+            $('.first-day').parent().parent().addClass('selected-day clicked-day');
             $('body, html').animate({ scrollTop: $('.first-day').offset().top - 150 }, 500);
-            $('.first-day').parent().parent().addClass('clicked-day');
             $('.dead_month_color').removeClass('clicked-day');
         }
     }
@@ -219,14 +211,16 @@ $('.month-selector, .year-selector').on('change', function (event) {
 })
 $('.month-selector').change();
 
+
+
+
 //============= Scroll Months functionality ==================//
 
 //===== Go to previous month =======//
 $('.prev').click(function () {
     $('.extra').hide()
   $('.add-item-form').removeClass('show-form');
-  $('.num-box').removeClass('selected-day');
-  $('.clicked-day').removeClass('double-click');
+  $('.num-box').removeClass('selected-day double-click');
   $('.num-date').removeClass('first-day');
   $('.transaction-button').removeClass('show');
   if($(document).find('#year').val() <= (year - 5)){
@@ -254,8 +248,7 @@ $('.prev').click(function () {
 $('.current').click(function () {
     $('.extra').hide()
   $('.add-item-form').removeClass('show-form');
-  $('.num-box').removeClass('selected-day');
-  $('.clicked-day').removeClass('double-click');
+  $('.num-box').removeClass('selected-day double-click');
   $('.num-date').removeClass('first-day');
   $('.transaction-button').removeClass('show');
   $(document).find('#month').val(month).change()
@@ -267,8 +260,7 @@ $('.current').click(function () {
 $('.next').click(function(){
     $('.extra').hide()
     $('.add-item-form').removeClass('show-form');
-    $('.num-box').removeClass('selected-day');
-    $('.clicked-day').removeClass('double-click');
+    $('.num-box').removeClass('selected-day double-click');
     $('.num-date').removeClass('first-day');
     $('.transaction-button').removeClass('show');
     if ($(document).find('#year').val() >= (year + 5) && $(document).find('#month').val() == 11) {
@@ -289,7 +281,7 @@ $('.next').click(function(){
             $('body, html').animate({ scrollTop: $('.selected-day').offset().top - 150 }, 500);
         }
     }
-    window.setTimeout(scrollDay, 500);
+    window.setTimeout(scrollDay, .5);
 });
 
 
@@ -332,7 +324,7 @@ $('.num-box').click(function(e) {
         $('body, html').animate({ scrollTop: $('.clicked-day').offset().top - 250 }, 500);
     }
 
-    window.setTimeout(scrollDay, 300);
+    window.setTimeout(scrollDay, .3);
 
 });
 
@@ -362,6 +354,12 @@ $('.add-item-button').click(function() {
 
 $('.close-form').click(function () {
     $('.add-item-form').removeClass('show-form');
+
+    function scrollDay() {
+        $('body, html').animate({ scrollTop: $('.clicked-day').offset().top - 250 }, 500);
+    }
+
+    window.setTimeout(scrollDay, .3);
 })
 
 //======== Only select one checkbox at a time ========//
