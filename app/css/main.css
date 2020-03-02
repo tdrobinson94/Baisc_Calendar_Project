@@ -83,7 +83,7 @@ html {
         transition: all .2s ease-in-out; }
     .calendar_wrapper .month .calendar-controls {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-around;
       margin: 10px 0;
       width: 200px; }
       @media screen and (max-width: 550px) {
@@ -106,6 +106,10 @@ html {
           font-size: 30px;
           left: -0.75px;
           top: -11.9px; }
+
+@-moz-document url-prefix() {
+  .calendar_wrapper .month .calendar-controls .button:before {
+    left: 2.25px; } }
         .calendar_wrapper .month .calendar-controls .button.entypo-calendar:before {
           font-weight: 100; }
         @media screen and (max-width: 800px) {

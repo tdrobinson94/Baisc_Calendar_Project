@@ -120,7 +120,7 @@ html {
     }
     .calendar-controls{
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-around;
         margin: 10px 0;
         width: 200px;
         @media screen and (max-width: $mid-small) {
@@ -151,6 +151,10 @@ html {
               font-size: 30px;
               left: -0.75px;
               top: -11.9px;
+
+              @-moz-document url-prefix() {
+                left: 2.25px;
+              }
             }
 
             &.entypo-calendar {
