@@ -14,6 +14,7 @@
 variables
 ================================================================= */
 //Breakpoints
+$sm-small: 320px;
 $mid-small: 550px;
 $end-small: 800px;
 $max-width: 1400px;
@@ -59,6 +60,11 @@ html {
     padding: 5px 0;
     // border-radius: 15px;
     background-color: $primary;
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
     .select-form{
       display: flex;
       align-items: center;
@@ -112,68 +118,76 @@ html {
         transition: all .2s ease-in-out;
       }
     }
-  }
-  .calendar-controls{
-      display: flex;
-      justify-content: space-evenly;
-      margin: 10px 0;
-      .prev{
+    .calendar-controls{
+        display: flex;
+        justify-content: space-evenly;
+        margin: 10px 0;
+        width: 200px;
+        @media screen and (max-width: $mid-small) {
+          width: 140px;
+        }
 
-      }
-      .next{
-        // right: 0px;
-      }
-      .button{
-          font-weight: bold;
-          background: transparent;
-          border: none;
-          z-index: 2;
-          transition: all .2s ease-in-out;
-          font-size: 13px;
-          position: relative;
-          color: $textwht;
+        @media screen and (max-width: $sm-small) {
+          width: 100px;
+        }
+        .prev{
 
-          &:before {
-            position: absolute;
-            font-size: 30px;
-            left: -0.75px;
-            top: -11.9px;
-          }
+        }
+        .next{
+          // right: 0px;
+        }
+        .button{
+            font-weight: bold;
+            background: transparent;
+            border: none;
+            z-index: 2;
+            transition: all .2s ease-in-out;
+            font-size: 13px;
+            position: relative;
+            color: $textwht;
 
-          &.entypo-calendar {
             &:before {
-              font-weight: 100;
+              position: absolute;
+              font-size: 30px;
+              left: -0.75px;
+              top: -11.9px;
             }
-          }
 
-          @media screen and (max-width: $end-small) {
-            outline: none;
-          }
-      }
-      .current::before {
-        font-weight: 100px;
+            &.entypo-calendar {
+              &:before {
+                font-weight: 100;
+              }
+            }
 
-      }
-      .button:hover{
-        color: $textdrk;
-        opacity: .4;
-        transition: all .2s ease-in-out;
-      }
-  }
+            @media screen and (max-width: $end-small) {
+              outline: none;
+            }
+        }
+        .current::before {
+          font-weight: 100px;
 
-  .weekday-initials {
-    display: flex;
-    justify-content: center;
-    padding: 10px 0 5px 0;
-
-    @media screen and (max-width: $end-small) {
-      display: none !important;
+        }
+        .button:hover{
+          color: $textdrk;
+          opacity: .4;
+          transition: all .2s ease-in-out;
+        }
     }
 
-    div {
-      width: 24%;
-      text-align: center;
-      opacity: .45;
+    .weekday-initials {
+      display: flex;
+      justify-content: center;
+      padding: 10px 0 5px 0;
+
+      @media screen and (max-width: $end-small) {
+        display: none !important;
+      }
+
+      div {
+        width: 24%;
+        text-align: center;
+        opacity: .45;
+      }
     }
   }
 
@@ -314,13 +328,13 @@ html {
               @media screen and (max-width: $end-small) {
                 bottom: 0;
                 box-shadow: none;
-                top: 96px;
+                top: 60px;
                 margin: 0;
                 height: auto;
               }
 
               @media screen and (max-width: $mid-small) {
-                top: 85px;
+                top: 50px;
               }
 
               .weekday {

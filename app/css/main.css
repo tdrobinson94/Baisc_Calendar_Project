@@ -36,6 +36,10 @@ html {
     position: sticky;
     padding: 5px 0;
     background-color: red; }
+    .calendar_wrapper .month .controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
     .calendar_wrapper .month .select-form {
       display: flex;
       align-items: center;
@@ -77,46 +81,53 @@ html {
         font-size: 20px;
         color: #fff;
         transition: all .2s ease-in-out; }
-  .calendar_wrapper .calendar-controls {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 10px 0; }
-    .calendar_wrapper .calendar-controls .button {
-      font-weight: bold;
-      background: transparent;
-      border: none;
-      z-index: 2;
-      transition: all .2s ease-in-out;
-      font-size: 13px;
-      position: relative;
-      color: #fff; }
-      .calendar_wrapper .calendar-controls .button:before {
-        position: absolute;
-        font-size: 30px;
-        left: -0.75px;
-        top: -11.9px; }
-      .calendar_wrapper .calendar-controls .button.entypo-calendar:before {
-        font-weight: 100; }
+    .calendar_wrapper .month .calendar-controls {
+      display: flex;
+      justify-content: space-evenly;
+      margin: 10px 0;
+      width: 200px; }
+      @media screen and (max-width: 550px) {
+        .calendar_wrapper .month .calendar-controls {
+          width: 140px; } }
+      @media screen and (max-width: 320px) {
+        .calendar_wrapper .month .calendar-controls {
+          width: 100px; } }
+      .calendar_wrapper .month .calendar-controls .button {
+        font-weight: bold;
+        background: transparent;
+        border: none;
+        z-index: 2;
+        transition: all .2s ease-in-out;
+        font-size: 13px;
+        position: relative;
+        color: #fff; }
+        .calendar_wrapper .month .calendar-controls .button:before {
+          position: absolute;
+          font-size: 30px;
+          left: -0.75px;
+          top: -11.9px; }
+        .calendar_wrapper .month .calendar-controls .button.entypo-calendar:before {
+          font-weight: 100; }
+        @media screen and (max-width: 800px) {
+          .calendar_wrapper .month .calendar-controls .button {
+            outline: none; } }
+      .calendar_wrapper .month .calendar-controls .current::before {
+        font-weight: 100px; }
+      .calendar_wrapper .month .calendar-controls .button:hover {
+        color: #333333;
+        opacity: .4;
+        transition: all .2s ease-in-out; }
+    .calendar_wrapper .month .weekday-initials {
+      display: flex;
+      justify-content: center;
+      padding: 10px 0 5px 0; }
       @media screen and (max-width: 800px) {
-        .calendar_wrapper .calendar-controls .button {
-          outline: none; } }
-    .calendar_wrapper .calendar-controls .current::before {
-      font-weight: 100px; }
-    .calendar_wrapper .calendar-controls .button:hover {
-      color: #333333;
-      opacity: .4;
-      transition: all .2s ease-in-out; }
-  .calendar_wrapper .weekday-initials {
-    display: flex;
-    justify-content: center;
-    padding: 10px 0 5px 0; }
-    @media screen and (max-width: 800px) {
-      .calendar_wrapper .weekday-initials {
-        display: none !important; } }
-    .calendar_wrapper .weekday-initials div {
-      width: 24%;
-      text-align: center;
-      opacity: .45; }
+        .calendar_wrapper .month .weekday-initials {
+          display: none !important; } }
+      .calendar_wrapper .month .weekday-initials div {
+        width: 24%;
+        text-align: center;
+        opacity: .45; }
   .calendar_wrapper .calendar-container {
     width: 100%;
     bottom: 0;
@@ -226,12 +237,12 @@ html {
               .calendar_wrapper .calendar-container .days .num-box.clicked-day.double-click {
                 bottom: 0;
                 box-shadow: none;
-                top: 96px;
+                top: 60px;
                 margin: 0;
                 height: auto; } }
             @media screen and (max-width: 550px) {
               .calendar_wrapper .calendar-container .days .num-box.clicked-day.double-click {
-                top: 85px; } }
+                top: 50px; } }
             .calendar_wrapper .calendar-container .days .num-box.clicked-day.double-click .weekday {
               margin-top: 25px; }
               @media screen and (max-width: 800px) {
