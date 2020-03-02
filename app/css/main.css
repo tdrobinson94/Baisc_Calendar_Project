@@ -60,9 +60,10 @@ html {
               font-size: 35px; } }
           .calendar_wrapper .month .select-form .date-selectors .selector option, .calendar_wrapper .month .select-form .date-selectors .todays-day option {
             color: #333333; }
-          .calendar_wrapper .month .select-form .date-selectors .selector:hover, .calendar_wrapper .month .select-form .date-selectors .todays-day:hover {
-            color: #333333;
-            opacity: .4; }
+          @media screen and (min-width: 550px) {
+            .calendar_wrapper .month .select-form .date-selectors .selector:hover, .calendar_wrapper .month .select-form .date-selectors .todays-day:hover {
+              color: #333333;
+              opacity: .4; } }
         .calendar_wrapper .month .select-form .date-selectors .todays-day {
           width: 65px; }
       .calendar_wrapper .month .select-form .settings {
@@ -117,10 +118,11 @@ html {
             outline: none; } }
       .calendar_wrapper .month .calendar-controls .current::before {
         font-weight: 100px; }
-      .calendar_wrapper .month .calendar-controls .button:hover {
-        color: #333333;
-        opacity: .4;
-        transition: all .2s ease-in-out; }
+      @media screen and (min-width: 550px) {
+        .calendar_wrapper .month .calendar-controls .button:hover {
+          color: #333333;
+          opacity: .4;
+          transition: all .2s ease-in-out; } }
     .calendar_wrapper .month .weekday-initials {
       display: flex;
       justify-content: center;
@@ -261,10 +263,11 @@ html {
               padding: 0px 20px;
               cursor: pointer;
               color: red; }
-              .calendar_wrapper .calendar-container .days .num-box.clicked-day.double-click .close-day:hover {
-                color: #333333;
-                opacity: .4;
-                transition: all .2s ease-in-out; }
+              @media screen and (min-width: 550px) {
+                .calendar_wrapper .calendar-container .days .num-box.clicked-day.double-click .close-day:hover {
+                  color: #333333;
+                  opacity: .4;
+                  transition: all .2s ease-in-out; } }
 
 @keyframes grow {
   50% {
@@ -403,10 +406,11 @@ html {
       padding: 0px 20px;
       cursor: pointer;
       color: #fff; }
-      .calendar_wrapper .add-item-form .close-form:hover {
-        color: #333333;
-        opacity: .4;
-        transition: all .2s ease-in-out; }
+      @media screen and (min-width: 550px) {
+        .calendar_wrapper .add-item-form .close-form:hover {
+          color: #333333;
+          opacity: .4;
+          transition: all .2s ease-in-out; } }
   .calendar_wrapper .add-item-button {
     padding: 15px;
     position: fixed;
@@ -418,10 +422,11 @@ html {
     color: #fff;
     right: 20px;
     z-index: 999; }
-    .calendar_wrapper .add-item-button:hover:before {
-      color: #333333;
-      opacity: .4;
-      transition: all .2s ease-in-out; }
+    @media screen and (min-width: 550px) {
+      .calendar_wrapper .add-item-button:hover:before {
+        color: #333333;
+        opacity: .4;
+        transition: all .2s ease-in-out; } }
     @media screen and (min-width: 800px) {
       .calendar_wrapper .add-item-button {
         right: 50%;
