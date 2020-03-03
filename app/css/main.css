@@ -299,7 +299,7 @@ html {
     .calendar_wrapper .add-item-form.show-form {
       position: fixed;
       margin: auto;
-      bottom: 15%;
+      bottom: 50%;
       height: 400px;
       width: 90%;
       right: 5%;
@@ -312,7 +312,7 @@ html {
       box-shadow: 1px 1px 10px #333333;
       float: none;
       overflow: auto;
-      transform: translateX(0);
+      transform: translate(0, 50%);
       color: #333333;
       border-radius: 0; }
       @media screen and (max-width: 800px) {
