@@ -151,7 +151,7 @@ html {
       height: 36.7%; }
       @media screen and (min-width: 800px) {
         .calendar_wrapper .calendar-container .days {
-          height: 34.7%; } }
+          height: 41.7%; } }
       .calendar_wrapper .calendar-container .days h1 {
         margin: 0;
         font-size: 25px;
