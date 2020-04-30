@@ -29,7 +29,7 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-surge": "^0.1.3",
     "gulp-uglifycss": "^1.1.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
   },
